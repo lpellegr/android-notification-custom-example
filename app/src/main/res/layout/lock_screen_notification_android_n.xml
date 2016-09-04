@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:clickable="true">
+
+    <NotificationHeaderView
+        android:id="@+id/notification_header"
+        android:layout_width="wrap_content"
+        android:layout_height="53dp"
+        android:clipChildren="false"
+        android:orientation="horizontal"
+        android:paddingBottom="16dp"
+        android:paddingEnd="16dp"
+        android:paddingStart="@dimen/notification_content_margin_start"
+        android:paddingTop="10dp">
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_marginEnd="3dp"
+            android:contentDescription="@string/app_name"
+            android:src="@mipmap/ic_launcher" />
+
+        <TextView
+            android:id="@+id/app_name_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="2dp"
+            android:layout_marginStart="3dp"
+            android:singleLine="true"
+            android:text="@string/app_name"
+            android:textAppearance="@android:style/TextAppearance.Material.Notification.Info" />
+    </NotificationHeaderView>
+
+    <LinearLayout
+        android:id="@+id/notification_main_column"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"
+        android:layout_marginBottom="@dimen/notification_content_margin_bottom"
+        android:layout_marginEnd="@dimen/notification_content_margin_end"
+        android:layout_marginStart="@dimen/notification_content_margin_start"
+        android:layout_marginTop="@dimen/notification_content_margin_top"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/line1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:singleLine="true"
+                android:textAppearance="@android:style/TextAppearance.Material.Notification.Title" />
+
+            <TextView
+                android:id="@+id/text_line_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal"
+                android:gravity="end|bottom"
+                android:singleLine="true"
+                android:textAppearance="@android:style/TextAppearance.Material.Notification" />
+        </LinearLayout>
+
+
+        <com.android.internal.widget.ImageFloatingTextView
+            android:id="@+id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_marginTop="@dimen/notification_text_margin_top"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal"
+            android:gravity="top"
+            android:singleLine="true"
+            android:textAppearance="@android:style/TextAppearance.Material.Notification" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="15dp"
+        android:layout_marginEnd="@dimen/notification_content_margin_end"
+        android:layout_marginStart="@dimen/notification_content_margin_start" />
+
+</FrameLayout>
